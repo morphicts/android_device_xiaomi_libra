@@ -1,0 +1,82 @@
+#!/bin/bash
+#
+# Script to deodex an app on the device in-place
+#
+# Based on Brandon McAnsh a.k.a bmc08gt (C) 2015
+# Mikko a.k.a morphic.ts (C) 2016
+#
+
+ROM_PATH=$1
+FULLPATH=$2
+APK_PATH=$(dirname $FULLPATH)
+APK=$(basename $FULLPATH)
+NAME=${APK%.*}
+
+HOME=.
+
+cd $(dirname $0)
+
+echo "Checking app's architecture..."
+echo ""
+
+ARCH=$2
+
+if [ -d "$APK_PATH/arm64" ]; then
+ARCH="arm64"
+fi
+if [ -d "$APK_PATH/arm" ]; then
+ARCH="arm"
+fi
+
+OUTPUT=$HOME/output
+WORKDIR=$HOME/tmp/$NAME
+
+echo "HOME      $HOME"
+echo "WORKDIR   $WORKDIR"
+echo "APK       $APK"
+echo "APK_PATH  $APK_PATH"
+echo "NAME      $NAME"
+echo "ARCH      $ARCH"
+
+echo "Creating workspace"
+echo ""
+
+rm -rf ${WORKDIR}
+mkdir -p ${WORKDIR}
+
+if [ ! -d $ROM_PATH/system/framework/$ARCH/odex ]; then
+	echo "Extracting class-path from boot.oat"
+	echo ""
+	${HOME}/oat2dex boot $ROM_PATH/system/framework/$ARCH/boot.oat
+fi
+
+if [ ! -d $FULLPATH-orig ]; then
+	cp $FULLPATH $FULLPATH-orig
+fi
+
+echo "Creating compatible dex for $APK"
+echo ""
+${HOME}/oat2dex $APK_PATH/$ARCH/$NAME.odex $ROM_PATH/system/framework/$ARCH/odex
+
+echo "Performing baksmali/smali operations"
+echo ""
+${HOME}/baksmali -a 21 -x $APK_PATH/$ARCH/$NAME.dex -d system/framework -o ${WORKDIR}/smali
+${HOME}/smali ${WORKDIR}/smali 
+
+echo "Pushing dex into apk: $FULLPATH"
+echo ""
+zip -gjq $FULLPATH classes.dex
+
+mv -f $FULLPATH $FULLPATH-unsigned
+
+echo "Signing apk: $FULLPATH-unsigned -> $FULLPATH"
+echo ""
+java -jar signapk.jar $ANDROID_BUILD_TOP/build/target/product/security/platform.x509.pem $ANDROID_BUILD_TOP/build/target/product/security/platform.pk8 $FULLPATH-unsigned $FULLPATH
+
+rm -f $FULLPATH-unsigned
+rm -f classes.dex
+rm -rf ${WORKDIR}
+
+echo "DONE"
+echo ""
+

@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">ROM Lisäasetukset</string>    
+    
+    <string name="error">Virhe</string>
+    <string name="reboot_needed">Uudelleen käynnistys</string>
+    <string name="ok">OK</string>
+    <string name="yes">Kyllä</string>
+    <string name="no">Ei</string>
+
+    <string name="newinstall_subject">Asennus Onnistui</string>
+    <string name="newinstall_welcome">Onnea! Olet juuri asentanut TS CM13.0 puhelimeesi!\nKatso ROM Lisäasetukset säätääksesi puhelimen sinulle sopivaksi.\nHaluatko päivityksia jatkossakin? Lahjoita hieman palvelimien ylläpitoon.\nNauti!</string>
+    <string name="update_subject">Päivitys Onnistui</string>
+    <string name="update_welcome">Onnea! Olet juuri päivittänyt TS CM13.0\nHaluatko päivityksia jatkossakin? Lahjoita hieman palvelimien ylläpitoon.\nNauti!</string>
+    
+    <string name="reboot_reason_captive">Internet tilan tarkistus moodin vaihtamiseen vaaditaan uudelleen käynnistys. Käynnistä nyt uudelleen?</string>    
+        
+    <!-- Ambient display pickup sensor enable -->
+    <string name="pref_title_enable_psen">Ambient näyttö</string>
+    <string name="pref_summary_enable_psen">Kun puhelin otetaan käteen, ambient näyttö syttyy</string>    
+
+    <!-- edge tap enable -->
+    <string name="pref_title_enable_etap">Reunan tuplanapautus</string>
+    <string name="pref_summary_enable_etap">Reunan tuplanapautus aiheuttaa taaksepäin painalluksen</string>    
+
+    <!-- Close apps enable -->
+    <string name="pref_title_enable_crec">Sulje käynnissä olevat ohjelmat</string>
+    <string name="pref_summary_enable_crec">Järjestelmä sulkee käynnissä olevat ohjelmat automaattisesti kun näyttö sammuu</string>    
+
+    <!-- Captive portal enable -->
+    <string name="pref_title_enable_capt">Internet tilan tarkistus</string>
+    <string name="pref_summary_enable_capt">Mahdollista internet tarkistus googlen palvelimelta</string>    
+    
+    <!-- General -->
+    <string name="pref_header_general">Yleiset</string>
+    <string name="pref_header_extra">Lisäasetukset</string>
+    <string name="pref_title_donate">Paypal lahjoitus</string>
+    <string name="pref_summary_donate">Haluatko päivityksia jatkossakin? Lahjoita hieman palvelimien ylläpitoon, KIITOS!</string>
+    <string name="pref_title_donate2">Play kauppa lahjoitus</string>
+    <string name="pref_summary_donate2">Haluatko päivityksia jatkossakin? Lahjoita palvelimien ylläpitoon ostamalla sovellus play kaupasta, KIITOS!</string>
+
+    
+</resources>

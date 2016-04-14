@@ -1,0 +1,55 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+            android:title="@string/pref_header_general"
+            android:key="pref_header_general_settings">
+
+		<Preference android:key="teamsuperluminal" 
+			style="?android:preferenceInformationStyle"
+			android:title="Team Superluminal version"
+			android:summary="No version info found"/>
+
+		<Preference
+			android:key="donate"
+			android:title="@string/pref_title_donate"
+			android:summary="@string/pref_summary_donate"
+			android:defaultValue="false" />
+
+		<Preference
+			android:key="donate2"
+			android:title="@string/pref_title_donate2"
+			android:summary="@string/pref_summary_donate2"
+			android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:title="@string/pref_header_extra"
+            android:key="pref_header_extra_settings">
+	
+		<CheckBoxPreference
+		android:key="psen_en_b"
+		android:title="@string/pref_title_enable_psen"
+		android:summary="@string/pref_summary_enable_psen"
+		android:defaultValue="true" />
+
+		<CheckBoxPreference
+		android:key="etap_en_b"
+		android:title="@string/pref_title_enable_etap"
+		android:summary="@string/pref_summary_enable_etap"
+		android:defaultValue="true" />
+
+		<CheckBoxPreference
+		android:key="crec_en_b"
+		android:title="@string/pref_title_enable_crec"
+		android:summary="@string/pref_summary_enable_crec"
+		android:defaultValue="true" />
+
+		<CheckBoxPreference
+		android:key="capt_en_b"
+		android:title="@string/pref_title_enable_capt"
+		android:summary="@string/pref_summary_enable_capt"
+		android:defaultValue="true" />
+	</PreferenceCategory>
+
+</PreferenceScreen>
