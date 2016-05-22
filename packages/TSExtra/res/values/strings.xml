@@ -8,11 +8,15 @@
     <string name="no">No</string>
 
     <string name="newinstall_subject">Installed Successfully</string>
-    <string name="newinstall_welcome">Congratulations! You have just installed TS CM13.0 for your Xiaomi mi4c\nTake a look at ROM Extra Settings for fine tuning your experience.\nWant to keep your for phone up to date in future also? Please donate few bucks for server costs.\nEnjoy!</string>
+    <string name="newinstall_welcome">Congratulations! You have just installed TS CM13.1 for your Xiaomi mi4c\nTake a look at ROM Extra Settings for fine tuning your experience.\nWant to keep your for phone up to date in future also? Please donate few bucks for server costs.\nEnjoy!</string>
     <string name="update_subject">Upgraded Successfully</string>
-    <string name="update_welcome">Congratulations! You have just updated your TS CM13.0\nWant to keep your for phone up to date in future also? Please donate few bucks for server costs.\nEnjoy!</string>
+    <string name="update_welcome">Congratulations! You have just updated your TS CM13.1\nWant to keep your for phone up to date in future also? Please donate few bucks for server costs.\nEnjoy!</string>
     
     <string name="reboot_reason_captive">When changing internet detection mode, system reboot is required. Reboot now?</string>    
+    
+    <!-- Disable fast charge blink -->
+    <string name="pref_title_enable_nochgp">Pulse led on fast charge</string>
+    <string name="pref_summary_enable_nochgp">Disable led pulse when fast charging</string>    
     
     <!-- Ambient display pickup sensor enable -->
     <string name="pref_title_enable_psen">Ambient display pickup sensor</string>
@@ -34,7 +38,15 @@
     <string name="pref_header_general">General</string>
     <string name="pref_header_extra">Extra Settings</string>
     <string name="pref_title_donate">Paypal donate</string>
-    <string name="pref_summary_donate">Want to keep your device up to date? Please donate few bucks fpr server costs, THANK YOU!</string>
+    <string name="pref_summary_donate">Want to keep your device up to date? Please donate few bucks for server costs, THANK YOU!</string>
     <string name="pref_title_donate2">Play Store donate</string>
     <string name="pref_summary_donate2">Want to keep your device up to date? Please buy donation app from Google Play store, THANK YOU!</string>
+
+	<!-- Lockscreen -->
+	<string name="pref_header_ls">Lockscreen</string>
+	<string name="pref_title_enable_lsst">Lockscreen see through</string>
+	<string name="pref_summary_enable_lsst">When enabled, you can see through lockscreen</string>
+	<string name="pref_title_lsblurrad">Lock screen blur</string>
+	<string name="pref_summary_lsblurrad">See through blur radius (1 - 250)</string>
+
 </resources>

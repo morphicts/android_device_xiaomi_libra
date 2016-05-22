@@ -26,6 +26,21 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+LOG_TAG="init_qcom_post"
+LOG_NAME="${0}:"
+
+loge ()
+{
+  /system/bin/log -t $LOG_TAG -p e "$@"
+}
+
+logi ()
+{
+  /system/bin/log -t $LOG_TAG -p i "$@"
+}
+
+logi "Begin"
+
 # ensure at most one A57 is online when thermal hotplug is disabled
 echo 0 > /sys/devices/system/cpu/cpu5/online
 # in case CPU4 is online, limit its frequency
@@ -106,10 +121,11 @@ chown -h system -R /sys/devices/system/cpu/
 chown -h system -R /sys/module/msm_thermal/
 chown -h system -R /sys/module/msm_performance/
 chown -h system -R /sys/module/cpu_boost/
-chown -h system -R /sys/devices/soc.0/qcom,bcl.*
+chown -h system -R /sys/devices/soc.0/qcom,bcl.*/
 chown -h system -R /sys/class/devfreq/qcom,cpubw*/
 chown -h system -R /sys/class/devfreq/qcom,mincpubw*/
 chown -h system -R /sys/class/kgsl/kgsl-3d0/
+chown -h system -R /sys/class/kgsl/kgsl-3d0/devfreq/
 
 # ts power scripts permissions
 chown -h system /system/etc/ts_power.sh
@@ -226,6 +242,7 @@ echo $oem_version > /sys/devices/soc0/image_crm_version
 # https://github.com/opengapps/opengapps/issues/200
 pm grant com.google.android.gms android.permission.ACCESS_FINE_LOCATION
 pm grant com.google.android.gms android.permission.ACCESS_COARSE_LOCATION
+pm grant com.google.android.setupwizard android.permission.READ_PHONE_STATE
 
 # Fix browser geolocation
 pm grant com.android.browser android.permission.ACCESS_FINE_LOCATION
@@ -240,4 +257,24 @@ pm grant com.google.android.gm.exchange android.permission.READ_CONTACTS
 pm grant com.google.android.gm.exchange android.permission.WRITE_CONTACTS
 pm grant com.google.android.gm.exchange android.permission.READ_CALENDAR
 pm grant com.google.android.gm.exchange android.permission.WRITE_CALENDAR
+
+# post init done
+setprop ts.post_init_done 1
+
+profile=`getprop persist.ts.profile`
+if [ "$profile" = "" ]; then
+	# balanced by default
+	profile=1
+fi
+
+# Call ts_power.sh, if found
+if [ -f /data/ts_power.sh ]; then
+	logi "Call /data/ts_power.sh set_profile $profile"
+	sh /data/ts_power.sh set_profile $profile
+elif [ -f /system/etc/ts_power.sh ]; then
+	logi "Call /system/etc/ts_power.sh set_profile $profile"
+	sh /system/etc/ts_power.sh set_profile $profile
+fi
+
+logi "Done"
 

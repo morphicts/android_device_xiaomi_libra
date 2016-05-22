@@ -75,6 +75,24 @@ void call_fname_ts_power_sh(const char *fname, const char *action, int value)
 void call_ts_power_sh(const char *action, int value)
 {
 	// ALOGI("%s: (%s, %d)", __func__, action, value);
+	static int post_init_done = 0;
+
+	if (!post_init_done) 
+	{
+		char tmp_str[PROPERTY_VALUE_MAX];
+		property_get("ts.post_init_done", tmp_str, "0");
+		if (tmp_str[0] == '1')
+		{
+			post_init_done = 1;
+			ALOGI("%s: post init ready!", __func__);
+		}
+	}
+
+	if (!post_init_done)
+	{
+		ALOGI("%s: post init not done yet..", __func__);
+		return;
+	}
 
 	if( access( USER_TS_POWER_SH, F_OK ) != -1 ) {
 		call_fname_ts_power_sh(USER_TS_POWER_SH, action, value);

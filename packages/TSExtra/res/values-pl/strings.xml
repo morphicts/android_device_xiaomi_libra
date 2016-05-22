@@ -7,17 +7,19 @@
     <string name="yes">Tak</string>
     <string name="no">Nie</string>
     <string name="newinstall_subject">Zainstalowano pomyślnie</string>
-    <string name="newinstall_welcome">"Gratulacje! Właśnie zainstalowałeś TS CM13.0 na swoim Xiaomi mi4c
-Sprawdź Zaawansowane ustawienia dla lepszego dostosowania Twojego urządzenia.
+    <string name="newinstall_welcome">"Gratulacje! Właśnie zainstalowałeś TS CM13.1 na swoim Xiaomi mi4c
+Sprawdź Zaawansowane ustawienia dla lepszego dostosowania swojego urządzenia.
 Chcesz mieć stale aktualny system? Wesprzyj nas małą kwotą.
 Miłego dnia!"</string>
     <string name="update_subject">Zaktualizowano pomyślnie</string>
-    <string name="update_welcome">"Gratulacje! Pomyślnie zaktualizowałeś TS CM13.0
+    <string name="update_welcome">"Gratulacje! Pomyślnie zaktualizowałeś TS CM13.1
 Chcesz mieć stale aktualny system? Wesprzyj nas małą kwotą.
 Miłego dnia!"</string>
     <string name="reboot_reason_captive">Przy zmianie metody wykrywania internetu konieczny jest restart. Zrobić to teraz?</string>
-	<string name="pref_title_enable_psen">Ambient display</string>
-    <string name="pref_summary_enable_psen">Powiadomienie włączy ambient display</string>
+	<string name="pref_title_enable_nochgp">Pulsująca dioda szybkiego ładowania</string>
+    <string name="pref_summary_enable_nochgp">Wyłącz pulsująca diodę podczas szybkiego ładowania</string>
+	<string name="pref_title_enable_psen">Ekran dostosowany do otoczenia</string>
+    <string name="pref_summary_enable_psen">Włącz ekran po podniesieniu urządzenia lub otrzymaniu powiadomienia</string>
     <string name="pref_title_enable_etap">Aktywna boczna krawędź</string>
     <string name="pref_summary_enable_etap">Podwójne dotknięcie krawędzi powoduje akcję przycisku wstecz</string>
     <string name="pref_title_enable_crec">Automatycznie wyłączaj pracujące apliakcje</string>

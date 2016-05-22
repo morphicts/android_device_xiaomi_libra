@@ -236,7 +236,9 @@ PRODUCT_PACKAGES += \
     libnl_2 \
 	libboringssl-compat \
 	libstlport \
-	libcamera_shim
+	libcamera_shim \
+	OpenWeatherMapProvider \
+	PhotoTable
 
 # bob
 PRODUCT_CHARACTERISTICS := nosdcard
@@ -262,6 +264,6 @@ ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
 #	BUILD_FINGERPRINT=Xiaomi/libra/libra:6.0.1/LMY47V/V7.1.6.0.LXKCNCK:user/release-keys
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-	PRIVATE_BUILD_DESC="libra-user 6.0.1 LMY47V V7.2.3.0.LXKCNDA release-keys" \
-	BUILD_FINGERPRINT=Xiaomi/libra/libra:6.0.1/LMY47V/V7.2.3.0.LXKCNDA:user/release-keys
+	PRIVATE_BUILD_DESC="libra-user 6.0.1 LMY47V V7.2.4.0.LXKCNDA release-keys" \
+	BUILD_FINGERPRINT=Xiaomi/libra/libra:6.0.1/LMY47V/V7.2.4.0.LXKCNDA:user/release-keys
 

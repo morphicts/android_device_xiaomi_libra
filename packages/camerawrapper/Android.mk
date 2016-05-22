@@ -12,7 +12,7 @@ LOCAL_C_INCLUDES := \
     system/media/camera/include
 
 LOCAL_SHARED_LIBRARIES := \
-    libhardware liblog libcamera_client libutils libcutils
+    libhardware liblog libcamera_client libutils libcutils libgui
 
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_MODULE := camera.$(TARGET_BOARD_PLATFORM)

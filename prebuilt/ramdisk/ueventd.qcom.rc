@@ -697,3 +697,90 @@
 
 # Ramdump devices
 /dev/ramdump*             0640   system     system
+
+# Little cluster interactive
+/sys/devices/system/cpu/cpu0/cpufreq interactive/above_hispeed_delay 0664    system  system
+/sys/devices/system/cpu/cpu0/cpufreq interactive/align_windows 0664    system  system
+/sys/devices/system/cpu/cpu0/cpufreq interactive/boost  0664    system  system
+/sys/devices/system/cpu/cpu0/cpufreq interactive/boostpulse  0664    system  system
+/sys/devices/system/cpu/cpu0/cpufreq interactive/boostpulse_duration  0664    system  system
+/sys/devices/system/cpu/cpu0/cpufreq interactive/go_hispeed_load 0664    system  system
+/sys/devices/system/cpu/cpu0/cpufreq interactive/hispeed_freq    0664    system  system
+/sys/devices/system/cpu/cpu0/cpufreq interactive/io_is_busy      0664    system  system
+/sys/devices/system/cpu/cpu0/cpufreq interactive/max_freq_hysteresis 0664    system  system
+/sys/devices/system/cpu/cpu0/cpufreq interactive/min_sample_rate 0664    system  system
+/sys/devices/system/cpu/cpu0/cpufreq interactive/min_sample_time 0664    system  system
+/sys/devices/system/cpu/cpu0/cpufreq interactive/sampling_down_factor 0664    system  system
+/sys/devices/system/cpu/cpu0/cpufreq interactive/sync_freq 0664    system  system
+/sys/devices/system/cpu/cpu0/cpufreq interactive/target_loads 0664    system  system
+/sys/devices/system/cpu/cpu0/cpufreq interactive/timer_rate  0664    system  system
+/sys/devices/system/cpu/cpu0/cpufreq interactive/timer_slack      0664    system  system
+/sys/devices/system/cpu/cpu0/cpufreq interactive/use_migration_notif      0664    system  system
+/sys/devices/system/cpu/cpu0/cpufreq interactive/use_sched_load      0664    system  system
+
+# Little cluster ondemand
+/sys/devices/system/cpu/cpu0/cpufreq ondemand/ignore_nice_load   0664    system  system
+/sys/devices/system/cpu/cpu0/cpufreq ondemand/io_is_busy      0664    system  system
+/sys/devices/system/cpu/cpu0/cpufreq ondemand/powersave_bias  0664    system  system
+/sys/devices/system/cpu/cpu0/cpufreq ondemand/sampling_down_factor    0664    system  system
+/sys/devices/system/cpu/cpu0/cpufreq ondemand/sampling_rate   0664    system  system
+/sys/devices/system/cpu/cpu0/cpufreq ondemand/sampling_rate_min   0664    system  system
+/sys/devices/system/cpu/cpu0/cpufreq ondemand/up_threshold   0664    system  system
+
+# Big cluster interactive
+/sys/devices/system/cpu/cpu4/cpufreq interactive/above_hispeed_delay 0664    system  system
+/sys/devices/system/cpu/cpu4/cpufreq interactive/align_windows 0664    system  system
+/sys/devices/system/cpu/cpu4/cpufreq interactive/boost  0664    system  system
+/sys/devices/system/cpu/cpu4/cpufreq interactive/boostpulse  0664    system  system
+/sys/devices/system/cpu/cpu4/cpufreq interactive/boostpulse_duration  0664    system  system
+/sys/devices/system/cpu/cpu4/cpufreq interactive/go_hispeed_load 0664    system  system
+/sys/devices/system/cpu/cpu4/cpufreq interactive/hispeed_freq    0664    system  system
+/sys/devices/system/cpu/cpu4/cpufreq interactive/io_is_busy      0664    system  system
+/sys/devices/system/cpu/cpu4/cpufreq interactive/max_freq_hysteresis 0664    system  system
+/sys/devices/system/cpu/cpu4/cpufreq interactive/min_sample_rate 0664    system  system
+/sys/devices/system/cpu/cpu4/cpufreq interactive/min_sample_time 0664    system  system
+/sys/devices/system/cpu/cpu4/cpufreq interactive/sampling_down_factor 0664    system  system
+/sys/devices/system/cpu/cpu4/cpufreq interactive/sync_freq 0664    system  system
+/sys/devices/system/cpu/cpu4/cpufreq interactive/target_loads 0664    system  system
+/sys/devices/system/cpu/cpu4/cpufreq interactive/timer_rate  0664    system  system
+/sys/devices/system/cpu/cpu4/cpufreq interactive/timer_slack      0664    system  system
+/sys/devices/system/cpu/cpu4/cpufreq interactive/use_migration_notif      0664    system  system
+/sys/devices/system/cpu/cpu4/cpufreq interactive/use_sched_load      0664    system  system
+
+/sys/devices/system/cpu/cpu5/cpufreq interactive/above_hispeed_delay 0664    system  system
+/sys/devices/system/cpu/cpu5/cpufreq interactive/align_windows 0664    system  system
+/sys/devices/system/cpu/cpu5/cpufreq interactive/boost  0664    system  system
+/sys/devices/system/cpu/cpu5/cpufreq interactive/boostpulse  0664    system  system
+/sys/devices/system/cpu/cpu5/cpufreq interactive/boostpulse_duration  0664    system  system
+/sys/devices/system/cpu/cpu5/cpufreq interactive/go_hispeed_load 0664    system  system
+/sys/devices/system/cpu/cpu5/cpufreq interactive/hispeed_freq    0664    system  system
+/sys/devices/system/cpu/cpu5/cpufreq interactive/io_is_busy      0664    system  system
+/sys/devices/system/cpu/cpu5/cpufreq interactive/max_freq_hysteresis 0664    system  system
+/sys/devices/system/cpu/cpu5/cpufreq interactive/min_sample_rate 0664    system  system
+/sys/devices/system/cpu/cpu5/cpufreq interactive/min_sample_time 0664    system  system
+/sys/devices/system/cpu/cpu5/cpufreq interactive/sampling_down_factor 0664    system  system
+/sys/devices/system/cpu/cpu5/cpufreq interactive/sync_freq 0664    system  system
+/sys/devices/system/cpu/cpu5/cpufreq interactive/target_loads 0664    system  system
+/sys/devices/system/cpu/cpu5/cpufreq interactive/timer_rate  0664    system  system
+/sys/devices/system/cpu/cpu5/cpufreq interactive/timer_slack      0664    system  system
+/sys/devices/system/cpu/cpu5/cpufreq interactive/use_migration_notif      0664    system  system
+/sys/devices/system/cpu/cpu5/cpufreq interactive/use_sched_load      0664    system  system
+
+# Big cluster ondemand
+/sys/devices/system/cpu/cpu4/cpufreq ondemand/ignore_nice_load   0664    system  system
+/sys/devices/system/cpu/cpu4/cpufreq ondemand/io_is_busy      0664    system  system
+/sys/devices/system/cpu/cpu4/cpufreq ondemand/powersave_bias  0664    system  system
+/sys/devices/system/cpu/cpu4/cpufreq ondemand/sampling_down_factor    0664    system  system
+/sys/devices/system/cpu/cpu4/cpufreq ondemand/sampling_rate   0664    system  system
+/sys/devices/system/cpu/cpu4/cpufreq ondemand/sampling_rate_min   0664    system  system
+/sys/devices/system/cpu/cpu4/cpufreq ondemand/up_threshold   0664    system  system
+
+/sys/devices/system/cpu/cpu5/cpufreq ondemand/ignore_nice_load   0664    system  system
+/sys/devices/system/cpu/cpu5/cpufreq ondemand/io_is_busy      0664    system  system
+/sys/devices/system/cpu/cpu5/cpufreq ondemand/powersave_bias  0664    system  system
+/sys/devices/system/cpu/cpu5/cpufreq ondemand/sampling_down_factor    0664    system  system
+/sys/devices/system/cpu/cpu5/cpufreq ondemand/sampling_rate   0664    system  system
+/sys/devices/system/cpu/cpu5/cpufreq ondemand/sampling_rate_min   0664    system  system
+/sys/devices/system/cpu/cpu5/cpufreq ondemand/up_threshold   0664    system  system
+
+

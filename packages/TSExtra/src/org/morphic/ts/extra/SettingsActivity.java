@@ -106,19 +106,6 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
 				saveSettingToProp(key, sharedPreferences.getString(key, ""));
 			}
 
-/*			if (key.equals("cpups_en_b") || key.equals("gpups_en_b"))
-			{
-				String perfProf = SystemProperties.get("sys.perf.profile", "");
-				if (perfProf.equals("1")) {
-					try {
-						Runtime.getRuntime().exec(new String[] { "/system/bin/sh", "/system/etc/sys_perf_profile_svc.sh" });
-					}
-					catch (Exception e) {
-						Log.d(TAG, "ERROR: " + e.getMessage());
-					}
-				}
-			}*/
-
 			if (key.equals("capt_en_b"))
 			{
 				Settings.Global.putInt(this.getContentResolver(),
@@ -180,6 +167,8 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
 			loadBoolSettingFromProp(editor, "psen_en_b");
 			loadBoolSettingFromProp(editor, "etap_en_b");
 			loadBoolSettingFromProp(editor, "crec_en_b");
+			loadBoolSettingFromProp(editor, "nochgp_en_b");
+			loadBoolSettingFromProp(editor, "lsst_en_b");
 
 			editor.putBoolean("capt_en_b", Settings.Global.getInt(this.getContentResolver(),
 			                  Settings.Global.CAPTIVE_PORTAL_DETECTION_ENABLED, 1) == 1 ? true : false);

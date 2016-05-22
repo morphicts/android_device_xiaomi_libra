@@ -8,12 +8,16 @@
     <string name="no">Ei</string>
 
     <string name="newinstall_subject">Asennus Onnistui</string>
-    <string name="newinstall_welcome">Onnea! Olet juuri asentanut TS CM13.0 puhelimeesi!\nKatso ROM Lisäasetukset säätääksesi puhelimen sinulle sopivaksi.\nHaluatko päivityksia jatkossakin? Lahjoita hieman palvelimien ylläpitoon.\nNauti!</string>
+    <string name="newinstall_welcome">Onnea! Olet juuri asentanut TS CM13.1 puhelimeesi!\nKatso ROM Lisäasetukset säätääksesi puhelimen sinulle sopivaksi.\nHaluatko päivityksia jatkossakin? Lahjoita hieman palvelimien ylläpitoon.\nNauti!</string>
     <string name="update_subject">Päivitys Onnistui</string>
-    <string name="update_welcome">Onnea! Olet juuri päivittänyt TS CM13.0\nHaluatko päivityksia jatkossakin? Lahjoita hieman palvelimien ylläpitoon.\nNauti!</string>
+    <string name="update_welcome">Onnea! Olet juuri päivittänyt TS CM13.1\nHaluatko päivityksia jatkossakin? Lahjoita hieman palvelimien ylläpitoon.\nNauti!</string>
     
     <string name="reboot_reason_captive">Internet tilan tarkistus moodin vaihtamiseen vaaditaan uudelleen käynnistys. Käynnistä nyt uudelleen?</string>    
         
+    <!-- Disable fast charge blink -->
+    <string name="pref_title_enable_nochgp">Pulssita lediä nopeassa latauksessa</string>
+    <string name="pref_summary_enable_nochgp">Poista pulssitus käytöstä</string>    
+
     <!-- Ambient display pickup sensor enable -->
     <string name="pref_title_enable_psen">Ambient näyttö</string>
     <string name="pref_summary_enable_psen">Kun puhelin otetaan käteen, ambient näyttö syttyy</string>    
@@ -38,5 +42,11 @@
     <string name="pref_title_donate2">Play kauppa lahjoitus</string>
     <string name="pref_summary_donate2">Haluatko päivityksia jatkossakin? Lahjoita palvelimien ylläpitoon ostamalla sovellus play kaupasta, KIITOS!</string>
 
-    
+	<!-- Lockscreen -->
+	<string name="pref_header_ls">Lukitusnäyttö</string>
+	<string name="pref_title_enable_lsst">Lukitusnäytön läpinäkyvyys</string>
+	<string name="pref_summary_enable_lsst">Jos päällä, voit nähdä Lukitusnäytön lävitse</string>
+	<string name="pref_title_lsblurrad">Lukitusnäytön sumennus</string>
+	<string name="pref_summary_lsblurrad">Läpinäkyvyyden sumennus määrä (1 - 250)</string>
+
 </resources>

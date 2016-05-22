@@ -24,32 +24,59 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+            android:title="@string/pref_header_ls"
+            android:key="pref_header_ls_settings">
+
+		<CheckBoxPreference
+			android:key="lsst_en_b"
+			android:title="@string/pref_title_enable_lsst"
+			android:summary="@string/pref_summary_enable_lsst"
+			android:defaultValue="false" />
+
+		<EditTextPreference
+			android:defaultValue="25"
+			android:dialogTitle="@string/pref_title_lsblurrad"
+			android:inputType="number"
+			android:key="lsblurrad"
+			android:summary="@string/pref_summary_lsblurrad"
+			android:title="@string/pref_title_lsblurrad" />
+
+	</PreferenceCategory>
+
+    <PreferenceCategory
             android:title="@string/pref_header_extra"
             android:key="pref_header_extra_settings">
 	
 		<CheckBoxPreference
-		android:key="psen_en_b"
-		android:title="@string/pref_title_enable_psen"
-		android:summary="@string/pref_summary_enable_psen"
-		android:defaultValue="true" />
+			android:key="nochgp_en_b"
+			android:title="@string/pref_title_enable_nochgp"
+			android:summary="@string/pref_summary_enable_nochgp"
+			android:defaultValue="false" />
 
 		<CheckBoxPreference
-		android:key="etap_en_b"
-		android:title="@string/pref_title_enable_etap"
-		android:summary="@string/pref_summary_enable_etap"
-		android:defaultValue="true" />
+			android:key="psen_en_b"
+			android:title="@string/pref_title_enable_psen"
+			android:summary="@string/pref_summary_enable_psen"
+			android:defaultValue="true" />
 
 		<CheckBoxPreference
-		android:key="crec_en_b"
-		android:title="@string/pref_title_enable_crec"
-		android:summary="@string/pref_summary_enable_crec"
-		android:defaultValue="true" />
+			android:key="etap_en_b"
+			android:title="@string/pref_title_enable_etap"
+			android:summary="@string/pref_summary_enable_etap"
+			android:defaultValue="true" />
 
 		<CheckBoxPreference
-		android:key="capt_en_b"
-		android:title="@string/pref_title_enable_capt"
-		android:summary="@string/pref_summary_enable_capt"
-		android:defaultValue="true" />
+			android:key="crec_en_b"
+			android:title="@string/pref_title_enable_crec"
+			android:summary="@string/pref_summary_enable_crec"
+			android:defaultValue="true" />
+
+		<CheckBoxPreference
+			android:key="capt_en_b"
+			android:title="@string/pref_title_enable_capt"
+			android:summary="@string/pref_summary_enable_capt"
+			android:defaultValue="true" />
+
 	</PreferenceCategory>
 
 </PreferenceScreen>

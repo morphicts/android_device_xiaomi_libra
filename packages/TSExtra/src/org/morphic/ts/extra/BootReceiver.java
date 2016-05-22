@@ -85,14 +85,14 @@ public class BootReceiver extends BroadcastReceiver
         
         if (val.equals(""))
         {
-            title = "Team Superluminal CM13.0";
+            title = "Team Superluminal CM13.1";
             msg = context.getResources().getString(R.string.newinstall_welcome);
             subject = context.getResources().getString(R.string.newinstall_subject);
             SystemProperties.set("persist.sys.ts.bc", val2);
         }
         else if (!val.equals(val2))
         {
-            title = "Team Superluminal CM13.0";
+            title = "Team Superluminal CM13.1";
             msg = context.getResources().getString(R.string.update_welcome);
             subject = context.getResources().getString(R.string.update_subject);
             SystemProperties.set("persist.sys.ts.bc", val2);

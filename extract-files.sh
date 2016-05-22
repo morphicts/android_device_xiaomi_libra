@@ -6,7 +6,6 @@ set +e
 VENDOR=xiaomi
 DEVICE=libra
 
-#ROM_PATH=/mnt/6c105da9-6d22-43e5-9ccb-d58438eba144/mi4c_cm13/miui/miui_MI4c_V7.2.3.0.LXKCNDA_da1ff68dd2_5.1
 ROM_PATH=$1
 
 if [ ! -d "$ROM_PATH" ]; then
