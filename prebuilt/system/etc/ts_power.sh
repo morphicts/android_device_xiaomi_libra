@@ -35,8 +35,15 @@ if [ "$action" = "set_interactive" ]; then
 				# POWER_SAVE / PROFILE_BIAS_POWER_SAVE -> big cluster off
 				echo 0 > /sys/devices/system/cpu/cpu4/core_ctl/max_cpus
 			;;
-			*)
+		    "2"|"4")
+				# HIGH_PERFORMANCE / BIAS_PERFORMANCE -> big cluster on
 				echo 2 > /sys/devices/system/cpu/cpu4/core_ctl/max_cpus
+				echo 2 > /sys/devices/system/cpu/cpu4/core_ctl/min_cpus
+			;;
+			*)
+				# BALANCED
+				echo 2 > /sys/devices/system/cpu/cpu4/core_ctl/max_cpus
+				echo 0 > /sys/devices/system/cpu/cpu4/core_ctl/min_cpus
         	;;
 		esac
 	fi
