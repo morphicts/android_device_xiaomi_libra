@@ -1,0 +1,52 @@
+<resources> 
+    <string name="app_name">Экстра настройки</string>    
+    
+    <string name="error">Ошибка</string> 
+    <string name="reboot_needed">Необходима перезагрузка</string> 
+    <string name="ok">OK</string> 
+    <string name="yes">Да</string> 
+    <string name="no">Нет</string> 
+
+    <string name="newinstall_subject">Успешно установлено</string> 
+    <string name="newinstall_welcome">Поздравляем! Вы только что установили TS CM13.1 на ваш Xiaomi mi4c\nЗагляните в Экстра настройки чтобы подстроить систему под себя.\nХотите, чтобы ваш телефон продолжал обновляться? Пожалуйста, помогите нам оплатить сервер.\nНаслаждайтесь!</string> 
+    <string name="update_subject">Успешно обновлено</string> 
+    <string name="update_welcome">Поздравляем! Вы только что обновили TS CM13.1\nХотите, чтобы ваш телефон продолжал обновляться? Пожалуйста, помогите нам оплатить сервер.\nНаслаждайтесь!</string> 
+    
+    <string name="reboot_reason_captive">Для смены режима требуется перезагрузка. Перезагрузить сейчас?</string>    
+    
+    <!-- Disable fast charge blink --> 
+    <string name="pref_title_enable_nochgp">Мигание индикатора при быстрой зарядке</string> 
+    <string name="pref_summary_enable_nochgp">Отключить мигание индикатора при быстрой зарядке</string>    
+    
+    <!-- Ambient display pickup sensor enable --> 
+    <string name="pref_title_enable_psen">Интерактивный дисплей</string> 
+    <string name="pref_summary_enable_psen">Показывать интерактивный дисплей при взятии телефона</string>    
+    
+    <!-- edge tap enable --> 
+    <string name="pref_title_enable_etap">Боковые грани</string> 
+    <string name="pref_summary_enable_etap">Дважды тапнуть по грани для перехода назад</string>    
+
+    <!-- Close apps enable --> 
+    <string name="pref_title_enable_crec">Автозакрытие запущенных приложений</string> 
+    <string name="pref_summary_enable_crec">Закрывать запущенные приложения при выключении экрана</string>    
+
+    <!-- Captive portal enable --> 
+    <string name="pref_title_enable_capt">Проверка подключения</string> 
+    <string name="pref_summary_enable_capt">Проверять доступ к сети при подключении</string>    
+
+    <!-- General --> 
+    <string name="pref_header_general">Основное</string> 
+    <string name="pref_header_extra">Экстра настройки</string> 
+    <string name="pref_title_donate">Paypal donate</string> 
+    <string name="pref_summary_donate">Хотите, чтобы ваш телефон продолжал обновляться? Пожалуйста, помогите нам оплатить сервер, СПАСИБО!</string> 
+    <string name="pref_title_donate2">Play Store donate</string> 
+    <string name="pref_summary_donate2">Хотите, чтобы ваш телефон продолжал обновляться? Пожалуйста, купите наше приложение в Google Play маркете, СПАСИБО!</string> 
+
+	<!-- Lockscreen --> 
+	<string name="pref_header_ls">Экран блокировки</string> 
+	<string name="pref_title_enable_lsst">Прозрачный экран блокировки</string> 
+	<string name="pref_summary_enable_lsst">Видеть сквозь экран блокировки</string> 
+	<string name="pref_title_lsblurrad">Размытие</string> 
+	<string name="pref_summary_lsblurrad">Степень размытия (1 - 250)</string> 
+
+</resources> 

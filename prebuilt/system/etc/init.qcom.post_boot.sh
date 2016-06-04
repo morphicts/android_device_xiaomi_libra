@@ -116,6 +116,71 @@ echo 384000 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
 # restore A57's max
 cat /sys/devices/system/cpu/cpu4/cpufreq/cpuinfo_max_freq > /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
 
+# Plugin remaining A57s
+echo 1 > /sys/devices/system/cpu/cpu5/online
+echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
+# Restore CPU 4 max freq from msm_performance
+echo "4:4294967295 5:4294967295" > /sys/module/msm_performance/parameters/cpu_max_freq
+# input boost configuration
+#echo 0:864000 > /sys/module/cpu_boost/parameters/input_boost_freq
+echo "0:600000 1:0 2:0 3:0 4:0 5:0" > /sys/module/cpu_boost/parameters/input_boost_freq
+echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
+# core_ctl module
+insmod /system/lib/modules/core_ctl.ko
+echo 2 > /sys/devices/system/cpu/cpu4/core_ctl/min_cpus
+echo 60 > /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres
+echo 30 > /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres
+echo 100 > /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms
+echo 1 > /sys/devices/system/cpu/cpu4/core_ctl/is_big_cluster
+echo 2 > /sys/devices/system/cpu/cpu4/core_ctl/task_thres
+# Setting b.L scheduler parameters
+echo 1 > /proc/sys/kernel/sched_migration_fixup
+echo 15 > /proc/sys/kernel/sched_small_task
+echo 20 > /proc/sys/kernel/sched_mostly_idle_load
+echo 3 > /proc/sys/kernel/sched_mostly_idle_nr_run
+echo 85 > /proc/sys/kernel/sched_upmigrate
+echo 70 > /proc/sys/kernel/sched_downmigrate
+echo 7500000 > /proc/sys/kernel/sched_cpu_high_irqload
+echo 60 > /proc/sys/kernel/sched_heavy_task
+echo 65 > /proc/sys/kernel/sched_init_task_load
+echo 200000000 > /proc/sys/kernel/sched_min_runtime
+echo 400000 > /proc/sys/kernel/sched_freq_inc_notify
+echo 400000 > /proc/sys/kernel/sched_freq_dec_notify
+#enable rps static configuration
+echo 8 > /sys/class/net/rmnet_ipa0/queues/rx-0/rps_cpus
+for devfreq_gov in /sys/class/devfreq/qcom,cpubw*/governor
+do
+    echo "bw_hwmon" > $devfreq_gov
+done
+for devfreq_gov in /sys/class/devfreq/qcom,mincpubw*/governor
+do
+    echo "cpufreq" > $devfreq_gov
+done
+
+# set GPU default power level to 5 (180MHz) instead of 4 (305MHz)
+echo 5 > /sys/class/kgsl/kgsl-3d0/default_pwrlevel
+
+# android background processes are set to nice 10. Never schedule these on the a57s.
+echo 9 > /proc/sys/kernel/sched_upmigrate_min_nice
+
+# Configure foreground and background cpuset
+echo "0-5" > /dev/cpuset/foreground/cpus
+echo "4-5" > /dev/cpuset/foreground/boost/cpus
+echo "0" > /dev/cpuset/background/cpus
+echo "0-3" > /dev/cpuset/system-background/cpus
+
+# Disable sched_boost
+echo 0 > /proc/sys/kernel/sched_boost
+
+# perfd
+ext=$(getprop "ro.vendor.extension_library")
+if [ "$ext" = "libqti-perfd-client.so" ]; then
+	rm /data/system/perfd/default_values
+	setprop ro.min_freq_0 384000
+	setprop ro.min_freq_4 384000
+	start perfd
+fi
+
 # system permissions for performance profiles
 chown -h system -R /sys/devices/system/cpu/
 chown -h system -R /sys/module/msm_thermal/
@@ -149,77 +214,6 @@ for mode in /sys/devices/soc.0/qcom,bcl.*/mode
 do
     echo -n enable > $mode
 done
-
-# Plugin remaining A57s
-echo 1 > /sys/devices/system/cpu/cpu5/online
-echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
-# Restore CPU 4 max freq from msm_performance
-echo "4:4294967295 5:4294967295" > /sys/module/msm_performance/parameters/cpu_max_freq
-# input boost configuration
-#echo 0:864000 > /sys/module/cpu_boost/parameters/input_boost_freq
-echo "0:600000 1:0 2:0 3:0 4:0 5:0" > /sys/module/cpu_boost/parameters/input_boost_freq
-echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
-# core_ctl module
-insmod /system/lib/modules/core_ctl.ko
-echo 2 > /sys/devices/system/cpu/cpu4/core_ctl/min_cpus
-echo 60 > /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres
-echo 30 > /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres
-echo 100 > /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms
-echo 1 > /sys/devices/system/cpu/cpu4/core_ctl/is_big_cluster
-echo 2 > /sys/devices/system/cpu/cpu4/core_ctl/task_thres
-# Setting b.L scheduler parameters
-echo 1 > /proc/sys/kernel/sched_migration_fixup
-echo 15 > /proc/sys/kernel/sched_small_task
-echo 20 > /proc/sys/kernel/sched_mostly_idle_load
-echo 3 > /proc/sys/kernel/sched_mostly_idle_nr_run
-echo 85 > /proc/sys/kernel/sched_upmigrate
-echo 70 > /proc/sys/kernel/sched_downmigrate
-echo 7500000 > /proc/sys/kernel/sched_cpu_high_irqload
-echo 60 > /proc/sys/kernel/sched_heavy_task
-echo 65 > /proc/sys/kernel/sched_init_task_load
-echo 200000000 > /proc/sys/kernel/sched_min_runtime
-echo 400000 > /proc/sys/kernel/sched_freq_inc_notify
-echo 400000 > /proc/sys/kernel/sched_freq_dec_notify
-#relax access permission for display power consumption
-chown -h system /sys/devices/system/cpu/cpu4/core_ctl/min_cpus
-chown -h system /sys/devices/system/cpu/cpu4/core_ctl/max_cpus
-#enable rps static configuration
-echo 8 > /sys/class/net/rmnet_ipa0/queues/rx-0/rps_cpus
-for devfreq_gov in /sys/class/devfreq/qcom,cpubw*/governor
-do
-    echo "bw_hwmon" > $devfreq_gov
-done
-for devfreq_gov in /sys/class/devfreq/qcom,mincpubw*/governor
-do
-    echo "cpufreq" > $devfreq_gov
-done
-
-# set GPU default power level to 5 (180MHz) instead of 4 (305MHz)
-echo 5 > /sys/class/kgsl/kgsl-3d0/default_pwrlevel
-
-# Let core_ctl hotplug big cluster
-# echo 0 > /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 
-
-# android background processes are set to nice 10. Never schedule these on the a57s.
-echo 9 > /proc/sys/kernel/sched_upmigrate_min_nice
-
-# Configure foreground and background cpuset
-echo "0-5" > /dev/cpuset/foreground/cpus
-echo "4-5" > /dev/cpuset/foreground/boost/cpus
-echo "0" > /dev/cpuset/background/cpus
-echo "0-3" > /dev/cpuset/system-background/cpus
-
-# Disable sched_boost
-echo 0 > /proc/sys/kernel/sched_boost
-
-# perfd
-ext=$(getprop "ro.vendor.extension_library")
-if [ "$ext" = "libqti-perfd-client.so" ]; then
-	rm /data/system/perfd/default_values
-	setprop ro.min_freq_0 384000
-	setprop ro.min_freq_4 384000
-	start perfd
-fi
 
 # Let kernel know our image version/variant/crm_version
 image_version="10:"
