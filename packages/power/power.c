@@ -191,16 +191,9 @@ void set_feature(struct power_module *module, feature_t feature, int state)
 
 	if (feature == POWER_FEATURE_DOUBLE_TAP_TO_WAKE) 
 	{
-		char WAKEGESTURE_PATH[1024];
-		char inputNum[PROPERTY_VALUE_MAX];
 		char tmp_str[NODE_MAX];
-		property_get("ts.touchinput", inputNum, "");
-		if (inputNum[0]) 
-		{
-			sprintf(WAKEGESTURE_PATH, "/sys/class/input/%s/wake_gesture", inputNum);
-		    snprintf(tmp_str, NODE_MAX, "%d", state);
-		    sysfs_write(WAKEGESTURE_PATH, tmp_str);
-		}
+		snprintf(tmp_str, NODE_MAX, "%d", state);
+	    sysfs_write("/sys/touchscreen/wake_gesture", tmp_str);
 	}
 }
 

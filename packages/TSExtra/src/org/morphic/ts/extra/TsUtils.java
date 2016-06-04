@@ -27,52 +27,11 @@ class TsUtils
         return true;
     }
 
-	private static String INPUTNUM = "";
-    private static String CONTROL_PATH = "";
-
-	static public boolean fileExists(String path)
+	static public String getInputControlPath(String extra) 
 	{
-		if (path.equals("")) return false;
-		File file = new File(path);
-		return file.exists();
+		return "/sys/touchscreen/" + extra;
 	}
 
-	static public String findInputNum()
-	{
-		for (int n=0; n<20; n++)
-		{
-			String path = String.format("/sys/class/input/input%d/wake_gesture", n);
-			if (fileExists(path))
-				return "input"+n;
-		}
-		return "";
-	} 
-
-    static public String getInputControlPath(String extra) 
-	{
-		// Check if we need to find correct input path
-		if (!fileExists(CONTROL_PATH)) {
-			CONTROL_PATH = "";
-			INPUTNUM = findInputNum();
-		}
-
-		if (!INPUTNUM.isEmpty())
-		{
-			if (!SystemProperties.get("ts.touchinput").equals(INPUTNUM)) {
-				// Set ts.touchinput property if changed
-				// Log.i("TsUtils", "ts.touchinput = " + INPUTNUM + "; extra = " + extra);
-		    	SystemProperties.set("ts.touchinput", INPUTNUM);
-			}
-       		CONTROL_PATH = "/sys/class/input/"+INPUTNUM+"/"+extra;
-		} 
-
-		// Double check path+extra really exists
-		if (!fileExists(CONTROL_PATH)) {
-			CONTROL_PATH = "";
-		}
-		return CONTROL_PATH;
-    }
-    
 	public static boolean setActiveEdgeMode(boolean state) {
 		String path = getInputControlPath("edge_mode");
 		if (path.equals(""))

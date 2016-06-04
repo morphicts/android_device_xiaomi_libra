@@ -30,17 +30,9 @@ import android.os.SystemProperties;
 
 public class KeyDisabler {
 
-    private static String CONTROL_PATH = "";
-
     static String getControlPath() 
 	{
-		if (CONTROL_PATH.isEmpty())
-		{
-		    String tsinput = SystemProperties.get("ts.touchinput");
-			if (!tsinput.isEmpty())
-        		CONTROL_PATH = "/sys/class/input/"+tsinput+"/ts_hw_keys_disable";
-		}
-		return CONTROL_PATH;
+		return "/sys/touchscreen/ts_hw_keys_disable";
     }
 
     public static boolean isSupported() { return true; }
