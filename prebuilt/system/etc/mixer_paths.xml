@@ -1515,7 +1515,7 @@
 
     <path name="handset-mic">
         <path name="main-mic" />
-        <ctl name="ADC1 Volume" value="3" />
+        <ctl name="ADC1 Volume" value="13" />
     </path>
 
     <path name="voice-handset-mic">
