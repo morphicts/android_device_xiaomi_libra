@@ -4,7 +4,7 @@ $(call inherit-product-if-exists, vendor/xiaomi/libra/libra-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/xiaomi/libra/overlay
 
-TARGET_OTA_ASSERT_DEVICE := mi4c,libra
+TARGET_OTA_ASSERT_DEVICE := mi4c,libra,aqua
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
@@ -241,7 +241,7 @@ PRODUCT_PACKAGES += \
 	PhotoTable
 
 # bob
-PRODUCT_CHARACTERISTICS := nosdcard
+#PRODUCT_CHARACTERISTICS := nosdcard
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
@@ -263,7 +263,11 @@ ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
 #	PRIVATE_BUILD_DESC="libra-user 6.0.1 LMY47V V7.1.6.0.LXKCNCK release-keys" \
 #	BUILD_FINGERPRINT=Xiaomi/libra/libra:6.0.1/LMY47V/V7.1.6.0.LXKCNCK:user/release-keys
 
+#PRODUCT_BUILD_PROP_OVERRIDES += \
+#	PRIVATE_BUILD_DESC="libra-user 6.0.1 LMY47V V7.2.4.0.LXKCNDA release-keys" \
+#	BUILD_FINGERPRINT=Xiaomi/libra/libra:6.0.1/LMY47V/V7.2.4.0.LXKCNDA:user/release-keys
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
-	PRIVATE_BUILD_DESC="libra-user 6.0.1 LMY47V V7.2.4.0.LXKCNDA release-keys" \
-	BUILD_FINGERPRINT=Xiaomi/libra/libra:6.0.1/LMY47V/V7.2.4.0.LXKCNDA:user/release-keys
+	PRIVATE_BUILD_DESC="libra-user 6.0.1 LMY47V V7.5.3.0.LXKCNDE release-keys" \
+	BUILD_FINGERPRINT=Xiaomi/libra/libra:6.0.1/LMY47V/V7.5.3.0.LXKCNDE:user/release-keys
 
