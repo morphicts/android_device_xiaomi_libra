@@ -1614,7 +1614,7 @@
         <ctl name="RDAC3 MUX" value="DEM2" />
         <ctl name="DAC1 Switch" value="1" />
         <ctl name="EAR PA Gain" value="POS_6_DB" />
-        <ctl name="RX1 Digital Volume" value="75" />
+        <ctl name="RX1 Digital Volume" value="84" />
     </path>
 
 
