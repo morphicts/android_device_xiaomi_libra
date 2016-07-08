@@ -1515,7 +1515,7 @@
 
     <path name="handset-mic">
         <path name="main-mic" />
-        <ctl name="ADC1 Volume" value="3" />
+        <ctl name="ADC1 Volume" value="13" />
     </path>
 
     <path name="voice-handset-mic">
@@ -1614,7 +1614,7 @@
         <ctl name="RDAC3 MUX" value="DEM2" />
         <ctl name="DAC1 Switch" value="1" />
         <ctl name="EAR PA Gain" value="POS_6_DB" />
-        <ctl name="RX1 Digital Volume" value="84" />
+        <ctl name="RX1 Digital Volume" value="75" />
     </path>
 
 
@@ -1644,10 +1644,10 @@
         <ctl name="RX2 MIX1 INP1" value="RX2" />
         <ctl name="CLASS_H_DSM MUX" value="DSM_HPHL_RX1" />
         <ctl name="HPHL DAC Switch" value="1" />
-        <ctl name="HPHL Volume" value="20" />
-        <ctl name="HPHR Volume" value="20" />
-        <ctl name="RX1 Digital Volume" value="84" />
-        <ctl name="RX2 Digital Volume" value="84" />
+        <ctl name="HPHL Volume" value="19" />
+        <ctl name="HPHR Volume" value="19" />
+        <ctl name="RX1 Digital Volume" value="75" />
+        <ctl name="RX2 Digital Volume" value="75" />
     </path>
 
     <path name="voice-headset-mic">
