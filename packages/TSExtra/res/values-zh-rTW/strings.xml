@@ -1,0 +1,41 @@
+<resources>
+   <string name="app_name">ROM增強設置</string>
+   <string name="error">錯誤</string>
+   <string name="reboot_needed">需要重啟</string>
+   <string name="ok">OK</string>
+   <string name="yes">是</string>
+   <string name="no">否</string>
+   <string name="newinstall_subject">安裝成功</string>
+   <string name="newinstall_welcome">祝賀!Xiaomi 4C安裝TS CM13.1成功\n，為提升使用體驗，您可以查看壹下ROM增強設置\n，同時可以在Paypal和Google Play Store對我進行捐贈\n，Enjoy!</string>
+   <string name="update_subject">升級成功</string>
+   <string name="update_welcome">祝賀！Xiaomi 4C更新TS CM13.1成功\n，願意與我壹起分擔服務器開支可以在Paypal和Google Play Store對我進行捐贈\n，Enjoy!</string>
+   <string name="reboot_reason_captive">正在改變網絡檢測模式，需要重啟系統，是否重啟？</string>
+   <!-- Disable fast charge blink -->
+   <string name="pref_title_enable_nochgp">快速充電時開啟指示燈閃爍</string>
+   <string name="pref_summary_enable_nochgp">快速充電時關閉指示燈閃爍</string>
+   <!-- Ambient display pickup sensor enable -->
+   <string name="pref_title_enable_psen">主動顯示拾起傳感器</string>
+   <string name="pref_summary_enable_psen">拿起電話時激活主動顯示</string>
+   <!-- edge tap enable -->
+   <string name="pref_title_enable_etap">邊緣觸控</string>
+   <string name="pref_summary_enable_etap">雙擊手機邊緣後退</string>
+   <!-- Close apps enable -->
+   <string name="pref_title_enable_crec">自動關閉運行程序</string>
+   <string name="pref_summary_enable_crec">鎖屏後自動關閉運行中的程序</string>
+   <!-- Captive portal enable -->
+   <string name="pref_title_enable_capt">網絡連接檢測</string>
+   <string name="pref_summary_enable_capt">開啟 google captive portal detection</string>
+   <!-- General -->
+   <string name="pref_header_general">通用</string>
+   <string name="pref_header_extra">增強設置</string>
+   <string name="pref_title_donate">Paypal 捐贈</string>
+   <string name="pref_summary_donate">您可以使用Paypal對我捐贈，以便獲得更好的體驗，謝謝！</string>
+   <string name="pref_title_donate2">Play Store 捐贈</string>
+   <string name="pref_summary_donate2">您也可以在Google Play Store購買我開發的捐贈app來支持我，謝謝！</string>
+   <!-- Lockscreen -->
+   <string name="pref_header_ls">鎖屏</string>
+   <string name="pref_title_enable_lsst">鎖屏透視</string>
+   <string name="pref_summary_enable_lsst">開啟時妳可以透視鎖定屏幕</string>
+   <string name="pref_title_lsblurrad">鎖屏透明度</string>
+   <string name="pref_summary_lsblurrad">透視模糊程度 (1 - 250)</string>
+</resources>
