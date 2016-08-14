@@ -267,7 +267,11 @@ ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
 #	PRIVATE_BUILD_DESC="libra-user 6.0.1 LMY47V V7.2.4.0.LXKCNDA release-keys" \
 #	BUILD_FINGERPRINT=Xiaomi/libra/libra:6.0.1/LMY47V/V7.2.4.0.LXKCNDA:user/release-keys
 
+#PRODUCT_BUILD_PROP_OVERRIDES += \
+#	PRIVATE_BUILD_DESC="libra-user 6.0.1 LMY47V V7.5.2.0.LXKCNDE release-keys" \
+#	BUILD_FINGERPRINT=Xiaomi/libra/libra:6.0.1/LMY47V/V7.5.2.0.LXKCNDE:user/release-keys
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
-	PRIVATE_BUILD_DESC="libra-user 6.0.1 LMY47V V7.5.3.0.LXKCNDE release-keys" \
-	BUILD_FINGERPRINT=Xiaomi/libra/libra:6.0.1/LMY47V/V7.5.3.0.LXKCNDE:user/release-keys
+	PRIVATE_BUILD_DESC="libra-user 6.0.1 MHC19Q V7.5.4.0.LXKCNDE release-keys" \
+	BUILD_FINGERPRINT=Xiaomi/libra/libra:6.0.1/MHC19Q/V7.5.4.0.LXKCNDE:user/release-keys
 
