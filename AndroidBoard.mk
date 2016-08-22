@@ -24,3 +24,14 @@ $(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wlan/qca_cld; \
 #	mkdir -p $(TARGET_OUT)/lib/modules;
 #	ln -sf qca_cld/qca_cld_wlan.ko $(TARGET_OUT)/lib/modules/wlan.ko;
 
+#IMS_LIBS := libimscamera_jni.so libimsmedia_jni.so
+#IMS_SYMLINKS := $(addprefix $(TARGET_OUT)/app/ims/lib/arm64/,$(notdir $(IMS_LIBS)))
+#$(IMS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+#	@echo "IMS lib link: $@"
+#	@mkdir -p $(dir $@)
+#	@rm -rf $@
+#	$(hide) ln -sf /system/vendor/lib64/$(notdir $@) $@
+#ALL_DEFAULT_INSTALLED_MODULES += $(IMS_SYMLINKS)
+
+include device/xiaomi/libra/tftp.mk
+
