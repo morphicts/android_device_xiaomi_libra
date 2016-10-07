@@ -169,6 +169,7 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
 			loadBoolSettingFromProp(editor, "crec_en_b");
 			loadBoolSettingFromProp(editor, "nochgp_en_b");
 			loadBoolSettingFromProp(editor, "lsst_en_b");
+			loadBoolSettingFromProp(editor, "hroot_en_b");
 
 			editor.putBoolean("capt_en_b", Settings.Global.getInt(this.getContentResolver(),
 			                  Settings.Global.CAPTIVE_PORTAL_DETECTION_ENABLED, 1) == 1 ? true : false);

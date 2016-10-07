@@ -14,6 +14,10 @@
     
     <string name="reboot_reason_captive">Internet tilan tarkistus moodin vaihtamiseen vaaditaan uudelleen käynnistys. Käynnistä nyt uudelleen?</string>    
         
+    <!-- Hide root icon -->
+    <string name="pref_title_enable_hroot">Piiloita root ikoni</string>
+    <string name="pref_summary_enable_hroot">Piiloita root ikoni (#) tilapalkista</string>    
+
     <!-- Disable fast charge blink -->
     <string name="pref_title_enable_nochgp">Pulssita lediä nopeassa latauksessa</string>
     <string name="pref_summary_enable_nochgp">Poista pulssitus käytöstä</string>    

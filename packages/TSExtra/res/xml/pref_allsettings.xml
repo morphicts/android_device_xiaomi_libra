@@ -48,6 +48,12 @@
             android:key="pref_header_extra_settings">
 	
 		<CheckBoxPreference
+			android:key="hroot_en_b"
+			android:title="@string/pref_title_enable_hroot"
+			android:summary="@string/pref_summary_enable_hroot"
+			android:defaultValue="false" />
+
+		<CheckBoxPreference
 			android:key="nochgp_en_b"
 			android:title="@string/pref_title_enable_nochgp"
 			android:summary="@string/pref_summary_enable_nochgp"

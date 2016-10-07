@@ -14,6 +14,10 @@
     
     <string name="reboot_reason_captive">When changing internet detection mode, system reboot is required. Reboot now?</string>    
     
+    <!-- Hide root icon -->
+    <string name="pref_title_enable_hroot">Hide root icon</string>
+    <string name="pref_summary_enable_hroot">Hide root icon (#) from status bar</string>    
+    
     <!-- Disable fast charge blink -->
     <string name="pref_title_enable_nochgp">Pulse led on fast charge</string>
     <string name="pref_summary_enable_nochgp">Disable led pulse when fast charging</string>    

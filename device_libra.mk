@@ -45,6 +45,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	$(call find-copy-subdir-files,*,device/xiaomi/libra/prebuilt/system,system)
 
+# Gello Browser
+PRODUCT_PACKAGES += \
+    Gello
+
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
@@ -248,12 +252,20 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_SCREEN_WIDTH := 1080
+# TARGET_SCREEN_HEIGHT := 1920
+# TARGET_SCREEN_WIDTH := 1080
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 800
 
 # Insecure adb
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
 ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
+
+# dex2oat
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat-swap=false \
+    dalvik.vm.dex2oat-threads=2 \
+    dalvik.vm.image-dex2oat-threads=4
 
 # Build desc & fingerprint from miui
 #ro.build.description=libra-user 5.1.1 LMY47V V7.0.15.0.LXKCNCI release-keys
@@ -272,6 +284,6 @@ ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
 #	BUILD_FINGERPRINT=Xiaomi/libra/libra:6.0.1/LMY47V/V7.5.2.0.LXKCNDE:user/release-keys
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-	PRIVATE_BUILD_DESC="libra-user 6.0.1 MHC19Q V7.5.4.0.LXKCNDE release-keys" \
-	BUILD_FINGERPRINT=Xiaomi/libra/libra:6.0.1/MHC19Q/V7.5.4.0.LXKCNDE:user/release-keys
+	PRIVATE_BUILD_DESC="libra-user 6.0.1 MOB30Z V8.0.5.0.LXKCNDG release-keys" \
+	BUILD_FINGERPRINT=Xiaomi/libra/libra:6.0.1/MHC19Q/V8.0.5.0.LXKCNDE:user/release-keys
 
