@@ -167,7 +167,6 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
 			loadBoolSettingFromProp(editor, "psen_en_b");
 			loadBoolSettingFromProp(editor, "etap_en_b");
 			loadBoolSettingFromProp(editor, "crec_en_b");
-			loadBoolSettingFromProp(editor, "nochgp_en_b");
 			loadBoolSettingFromProp(editor, "lsst_en_b");
 			loadBoolSettingFromProp(editor, "hroot_en_b");
 

@@ -54,12 +54,6 @@
 			android:defaultValue="false" />
 
 		<CheckBoxPreference
-			android:key="nochgp_en_b"
-			android:title="@string/pref_title_enable_nochgp"
-			android:summary="@string/pref_summary_enable_nochgp"
-			android:defaultValue="false" />
-
-		<CheckBoxPreference
 			android:key="psen_en_b"
 			android:title="@string/pref_title_enable_psen"
 			android:summary="@string/pref_summary_enable_psen"
