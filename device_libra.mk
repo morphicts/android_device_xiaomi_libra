@@ -189,12 +189,17 @@ PRODUCT_PACKAGES += \
 
 #    libdashplayer \
 
-# No FM on mi4c
-#PRODUCT_PACKAGES += \
-#    FM2 \
-#    FMRecord \
-#    libqcomfm_jni \
-#    qcom.fmradio
+# Enable hands-free profile and set power class
+PRODUCT_PROPERTY_OVERRIDES += \
+    bluetooth.hfp.client=1 \
+    ro.bluetooth.hfp.ver=1.6 \
+    qcom.bt.le_dev_pwr_class=1
+
+# limit dex2oat threads to improve thermals
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.boot-dex2oat-threads=4 \
+    dalvik.vm.dex2oat-threads=2 \
+    dalvik.vm.image-dex2oat-threads=4
 
 # Power
 PRODUCT_PACKAGES += \
@@ -252,8 +257,8 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Boot animation
-# TARGET_SCREEN_HEIGHT := 1920
-# TARGET_SCREEN_WIDTH := 1080
+#TARGET_SCREEN_HEIGHT := 1920
+#TARGET_SCREEN_WIDTH := 1080
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 800
 
@@ -261,29 +266,8 @@ TARGET_SCREEN_WIDTH := 800
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
 ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
 
-# dex2oat
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.dex2oat-swap=false \
-    dalvik.vm.dex2oat-threads=2 \
-    dalvik.vm.image-dex2oat-threads=4
-
 # Build desc & fingerprint from miui
-#ro.build.description=libra-user 5.1.1 LMY47V V7.0.15.0.LXKCNCI release-keys
-#ro.build.fingerprint=Xiaomi/libra/libra:5.1.1/LMY47V/V7.0.15.0.LXKCNCI:user/release-keys
-
-#PRODUCT_BUILD_PROP_OVERRIDES += \
-#	PRIVATE_BUILD_DESC="libra-user 6.0.1 LMY47V V7.1.6.0.LXKCNCK release-keys" \
-#	BUILD_FINGERPRINT=Xiaomi/libra/libra:6.0.1/LMY47V/V7.1.6.0.LXKCNCK:user/release-keys
-
-#PRODUCT_BUILD_PROP_OVERRIDES += \
-#	PRIVATE_BUILD_DESC="libra-user 6.0.1 LMY47V V7.2.4.0.LXKCNDA release-keys" \
-#	BUILD_FINGERPRINT=Xiaomi/libra/libra:6.0.1/LMY47V/V7.2.4.0.LXKCNDA:user/release-keys
-
-#PRODUCT_BUILD_PROP_OVERRIDES += \
-#	PRIVATE_BUILD_DESC="libra-user 6.0.1 LMY47V V7.5.2.0.LXKCNDE release-keys" \
-#	BUILD_FINGERPRINT=Xiaomi/libra/libra:6.0.1/LMY47V/V7.5.2.0.LXKCNDE:user/release-keys
-
 PRODUCT_BUILD_PROP_OVERRIDES += \
-	PRIVATE_BUILD_DESC="libra-user 6.0.1 MOB30Z V8.0.5.0.LXKCNDG release-keys" \
-	BUILD_FINGERPRINT=Xiaomi/libra/libra:6.0.1/MHC19Q/V8.0.5.0.LXKCNDE:user/release-keys
+	PRIVATE_BUILD_DESC="libra-user 6.0.1 MOB30Z V8.1.3.0.LXKCNDI release-keys" \
+	BUILD_FINGERPRINT=Xiaomi/libra/libra:6.0.1/MHC19Q/V8.1.3.0.LXKCNDI:user/release-keys
 

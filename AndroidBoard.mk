@@ -35,3 +35,12 @@ $(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wlan/qca_cld; \
 
 include device/xiaomi/libra/tftp.mk
 
+# FW files
+INSTALLED_RADIOIMAGE_TARGET += device/xiaomi/libra/radio/filesmap
+INSTALLED_RADIOIMAGE_TARGET += device/xiaomi/libra/radio/bk2.img
+INSTALLED_RADIOIMAGE_TARGET += device/xiaomi/libra/radio/rpm.mbn
+INSTALLED_RADIOIMAGE_TARGET += device/xiaomi/libra/radio/pmic.mbn
+INSTALLED_RADIOIMAGE_TARGET += device/xiaomi/libra/radio/NON-HLOS.bin
+INSTALLED_RADIOIMAGE_TARGET += device/xiaomi/libra/radio/hyp.mbn
+INSTALLED_RADIOIMAGE_TARGET += device/xiaomi/libra/radio/BTFM.bin
+

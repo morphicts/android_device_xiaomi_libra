@@ -240,6 +240,7 @@ BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 TARGET_BOOTANIMATION_USE_RGB565 := true
+#TARGET_BOOTANIMATION_MULTITHREAD_DECODE := false
 
 # TWRP
 TW_THEME := portrait_hdpi
@@ -276,18 +277,16 @@ RECOVERY_FSTAB_VERSION := 1
 TARGET_RECOVERY_FSTAB := device/xiaomi/libra/twrp.fstab
 #endif
 
-# Enable dex pre-opt to speed up initial boot
-#ifneq ($(TARGET_USES_AOSP),true)
-#  ifeq ($(HOST_OS),linux)
-#    ifeq ($(WITH_DEXPREOPT),)
-#      WITH_DEXPREOPT := true
-#      ifneq ($(TARGET_BUILD_VARIANT),user)
-        # Retain classes.dex in APK's for non-user builds
-#        DEX_PREOPT_DEFAULT := nostripping
-#      endif
-#    endif
-#  endif
-#endif
+# Enable dexpreopt to speed boot time
+ifeq ($(HOST_OS),linux)
+  ifeq ($(call match-word-in-list,$(TARGET_BUILD_VARIANT),user),true)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+    endif
+  endif
+endif
+
+TARGET_RELEASETOOLS_EXTENSIONS := device/xiaomi/libra/releasetools
 
 # SELinux
 BOARD_SEPOLICY_DIRS += device/xiaomi/libra/sepolicy

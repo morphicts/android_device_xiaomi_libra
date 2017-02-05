@@ -71,6 +71,9 @@ public class BootReceiver extends BroadcastReceiver
 			TsUtils.setKeyDisabler(true);
 		}
 
+		// Restart fuel gauge
+		//TsUtils.writeLine("/sys/module/qpnp_fg/parameters/restart", "1");
+
 		// Check ROM update
 		checkRomUpdate(context);
     }
@@ -78,7 +81,7 @@ public class BootReceiver extends BroadcastReceiver
 	void checkRomUpdate(Context context)
 	{
 		String val = SystemProperties.get("persist.sys.ts.bc");
-        String val2 = SystemProperties.get("ro.ts.build");
+        String val2 = SystemProperties.get("ro.build.date.utc");
         String title = "";
         String subject = "";
         String msg = "";        

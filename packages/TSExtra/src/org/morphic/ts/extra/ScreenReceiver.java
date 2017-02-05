@@ -86,6 +86,9 @@ public class ScreenReceiver extends BroadcastReceiver
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
+
+			// Restart fuel gauge
+			//TsUtils.writeLine("/sys/module/qpnp_fg/parameters/restart", "1");
 		}    
     }
 }

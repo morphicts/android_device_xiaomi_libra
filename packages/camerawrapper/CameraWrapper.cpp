@@ -21,7 +21,7 @@
 *
 */
 
-//#define LOG_NDEBUG 0
+// #define LOG_NDEBUG 0
 
 #define LOG_TAG "CameraWrapper"
 #include <cutils/log.h>
@@ -110,12 +110,12 @@ static int check_vendor_module()
 }
 
 static bool can_talk_to_sensormanager()
- {
+{
      android::SensorManager& sensorManager(
              android::SensorManager::getInstanceForPackage(android::String16("camera")));
      android::Sensor const * const * sensorList;
      return sensorManager.getSensorList(&sensorList) >= 0;
- }
+}
 
 static char *camera_fixup_getparams(int id __attribute__((unused)),
         const char *settings)
@@ -628,10 +628,13 @@ fail:
 
 static int camera_get_number_of_cameras(void)
 {
-    ALOGV("%s", __FUNCTION__);
-    if (check_vendor_module())
-        return 0;
-    return gVendorModule->get_number_of_cameras();
+	int ret = 0;
+    if (!check_vendor_module())
+    {
+	    ret = gVendorModule->get_number_of_cameras();
+	}
+   	ALOGV("%s; ret %d", __FUNCTION__, ret);
+	return ret;
 }
 
 static int camera_get_camera_info(int camera_id, struct camera_info *info)
